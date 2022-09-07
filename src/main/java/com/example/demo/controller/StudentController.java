@@ -1,4 +1,4 @@
-package in.ac.charusat.studentmgmtsystem.controller;
+package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -10,13 +10,13 @@ import java.util.List;
 @CrossOrigin(origins="https://localhost:3000")
 
 public class StudentController {
-    List<Student> students = new ArrayList<>(
-            Arrays.asList(
-                    new Student(1, "Tom", "US"),
-                    new Student(2, "Harry", "Canada"),
-                    new Student(3, "Nick", "UK")
-            )
-    );
+//    List<Student> students = new ArrayList<>(
+//            Arrays.asList(
+//                    new Student(1, "Tom", "US"),
+//                    new Student(2, "Harry", "Canada"),
+//                    new Student(3, "Nick", "UK")
+//            )
+//    );
 
     // Mappings - URL endpoints
     // Get the list of all student
@@ -53,7 +53,8 @@ public class StudentController {
     // Update the student information
     @PutMapping("/student/{id}")
     public List<Student> updateStudent(@RequestBody Student student, @PathVariable Integer id){
-        for(int i=0; i< students.size(); i++){
+        List<Student> students;
+        for(int i = 0; i< students.size(); i++){
             if(students.get(i).getId()==id){
                 students.get(i).setName(student.getName());
                 students.get(i).setAddress(student.getAddress());
