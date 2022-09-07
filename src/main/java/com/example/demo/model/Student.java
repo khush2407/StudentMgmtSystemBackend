@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -45,3 +46,4 @@ public class Student {
         this.address = address;
     }
 }
+
